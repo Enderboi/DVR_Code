@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#textbox {
+	width: 90%;
+	margin-top: 5px;
+	padding: 5px 15px 20px 15px;
+	border: 1px solid #cccccc;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}

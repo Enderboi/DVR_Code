@@ -1,0 +1,76 @@
+<!-- BEGIN TEMPLATE 'header'-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>[[WEBTITLE]]</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery Core -->
+	<script src="[[htmlRoot]]/HTML/jquery-2.1.4.min.js"></script>
+	<script src="[[htmlRoot]]/HTML/camera.js"></script>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="[[htmlRoot]]/HTML/main.css">
+</HEAD>
+<BODY>
+
+<DIV STYLE='height: 100px; width: auto; margin: auto;'>	
+	<DIV STYLE='background-color: lightgrey; font-size: 0.8em; height: 100%; width: 35%; float: left; border: 1px blue dashed; padding: 5px'>
+		[[Header_Left]]
+	</DIV>
+
+	<DIV STYLE='font-size: 0.8em; height: 100%; width: auto; padding: 5px 20px 5px 20px; float: right; border: 1px blue dashed;'>
+		[[Header_Right]]
+		<FORM>Images from: <INPUT NAME=date value="[[DATE_CUR]]" SIZE=10 MAXLENGTH=10><INPUT TYPE=hidden name=Camera VALUE='[[CAMERA]]'><INPUT TYPE=SUBMIT VALUE=" Search "></FORM>
+
+			<div id="textbox">
+				<P class='alignleft' style='color: green; padding-right: 10px'><A HREF=index.php?date=[[DATE_PREV]]&Camera=[[CAMERA]]><-- Previous Day</A></P>
+				<P class='alignright' style='color: green; padding-left: 10px'><A HREF=index.php?date=[[DATE_NEXT]]&Camera=[[CAMERA]]>Next Day --></A></P>
+			</div>
+			<br/>
+
+			<center><b><A ID='helpBtn' style='color: blue; text' decoration: none;'>[Show Help]</a> <img width=10 height=1 border=0>
+			<A HREF="[[htmlRoot]]/index.php" style='color: blue; text-decoration: none;'>[Snapshot Home]</a>
+			</b></center>
+	</DIV>
+
+	<div style='padding: 10px; display: none; background-color: skyblue; position: absolute; left: 0px; right: 0px; width: 50%; top: 100px; margin: auto; z-index: 10; align: center; border: 1px green dashed;' name=help id=help>
+		<div style='float:right'><a href="javascript:$('#help').slideUp()">[Hide]</a></div>
+
+		<p style='font-size: 0.8em'>
+			Arm/Disarm individual cameras using the Green/Red links (top-left)
+			<BR/>... the blue 'View' links will filter sequences to those from a specific camera.
+			<BR/><BR/>
+			<BR/>Event Sequences can also be viewed by-camera (click the red Camera Name link)
+			<BR/>... or click 'View Full Sequence' to display <b>all</b> media from all sources.
+			<BR/><BR/>
+			<BR/>The 'Film Strip' preview list is shown when an event sequence includes ><?=$Thresh?> images
+			<BR/>... click a thumbnail for a full-size version.
+			</p>
+	</div>
+
+	<div style='padding: 10px; display: none; background-color: lightblue; position: absolute; left: 0px; right: 0px; width: 720px; top: 100px; margin: auto; z-index: 10; align: center; border: 1px red dashed;' name=image id=image>
+		<div style='float:right'><a href="javascript:$('#image').slideUp()">[Hide]</a></div><BR/>
+
+		<p style='font-size: 0.8em'>
+		</p>
+	</div>
+</DIV>
+<BR/>
+<TABLE WIDTH=100%>
+<!-- END TEMPLATE 'header'-->
+
+<!-- BEGIN TEMPLATE 'footer'-->
+</TABLE>
+</BODY>
+</HTML>
+<!-- END TEMPLATE 'footer'-->
+
+<!-- BEGIN TEMPLATE 'camera_InfoLine'-->
+	<div id='textbox'>
+		<P class='alignleft' style='color: green'><A HREF=index.php?Camera=[[CAM_NAME]]&date=[[DATE_CUR]]>[[[CAM_NAME]]]</A></P>
+		<P class='alignright' style='color: green'>Last Pic @ [[CAM_SNAPLAST]]</P>
+		<P class='alignright' style='color: blue; padding-right: 25px; padding-left: 25px;'>[[[CAM_SNAPCOUNT]] Total]</P>
+	</div>
+<!-- END TEMPLATE 'camera_InfoLine'-->
